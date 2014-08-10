@@ -61,8 +61,11 @@ function createNearStream (db, os) {
     var msg = JSON.parse(data.value);
     var dist = distance(os.lat, os.lng, msg._nearby.lat, msg._nearby.lng) * 1000;
 
+    var _nearby = msg._nearby;
+    _nearby.distance = dist;
     msg = msg.value;
-    cb(null, dist < os.radius ? { key: data.key, value: msg } : undefined);
+    
+    cb(null, dist < os.radius ? { key: data.key, value: msg, _nearby: _nearby } : undefined);
   }));
 }
 

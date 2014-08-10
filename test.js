@@ -12,4 +12,5 @@ var db = nearby(level('./db'));
 db.createNearStream({ lat: 34.0908829, lng: -118.3646206, radius: 1940 })
   .on('data', function (data) {
   console.log(data.key, '=', data.value);
+  console.log('distance: ', data._nearby.distance + 'm');
 });
