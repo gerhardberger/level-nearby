@@ -1,0 +1,36 @@
+{
+  "name": "level-nearby",
+  "version": "0.1.0",
+  "description": "store and retrieve data in leveldb using a lat/long pair in a given radius",
+  "main": "index.js",
+  "dependencies": {
+    "xtend": "~4.0.0"
+    , "s2": "~0.3.9"
+    , "merge-stream": "~0.1.5"
+    , "map-stream": "~0.1.0"
+    , "gps-distance": "~0.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gerhardberger/level-nearby.git"
+  },
+  "main": "index.js",
+  "homepage": "https://github.com/gerhardberger/level-nearby",
+  "keywords": [
+    "level",
+    "nearby",
+    "insert",
+    "put",
+    "key",
+    "latitude",
+    "longitude",
+    "radius",
+    "s2"
+  ],
+  "author": {
+    "name": "Gerhard Berger",
+    "email": "93.morph@gmail.com",
+    "url": "https://twitter.com/native_cat"
+  },
+  "license": "MIT"
+}
