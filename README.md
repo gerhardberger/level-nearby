@@ -16,7 +16,7 @@ db.put({ lat: 34.0908829, lng: -118.3856206 }, 'foo', function (err) {
 
 db.createNearStream({ lat: 34.0908829, lng: -118.3646206, radius: 2000 })
   .on('data', function (data) {
-  console.log(data.value);      // prints 'foof'
+  console.log(data.value);      // prints 'foo'
 });
 ```
 
