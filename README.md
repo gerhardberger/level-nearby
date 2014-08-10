@@ -32,7 +32,7 @@ transforms `db` the be able to perform the `put` and `createNearStream` methods 
 insert `value` in `db` with a key that represents the given latitude (`lat`) and longitude (`lng`) in `keyObj`. `keyObj` can have a `customId` than that makes the key unique. By default the customId is a timestamp.
 
 ### db.createNearStream(searchObj)
-retrieves the entries in `db` that are in the `radius` of the `lat`, `lng` pair. returns a read stream with the results.
+retrieves the entries in `db` that are in the `radius` of the `lat`, `lng` pair. returns a read stream with the results. `radius` is measured in **meters**.
 
 ## install
 ``` batch
