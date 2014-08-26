@@ -4,10 +4,17 @@ var level  = require('level')
 
 var db = nearby(level('./db'));
 
-/*db.put({ lat: 34.0908829, lng: -118.3856206 }, 'value2', function (err) {
-  if (err) console.log(err);
+/*
+db.put({ lat: 34.0908829, lng: -118.3856206 }, 'value2', function (err) {
+  if (err) { console.log(err); return; }
   console.log('success');
-});*/
+});
+
+db.put('foo', 'bar', function (err) {
+	if (err) { console.log(err); return; }
+	console.log('success');
+});
+*/
 
 db.createNearStream({ lat: 34.0908829, lng: -118.3646206, radius: 1940 })
   .on('data', function (data) {

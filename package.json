@@ -1,6 +1,6 @@
 {
   "name": "level-nearby",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "store and retrieve data in leveldb using a lat/long pair in a given radius",
   "main": "index.js",
   "dependencies": {

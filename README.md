@@ -29,7 +29,7 @@ var nearby = require('level-nearby');
 transforms `db` the be able to perform the `put` and `createNearStream` methods on it. `options` can have a `prefix` field, than the methods will have that prefix.
 
 ### db.put(keyObj, value[, options][, callback]))
-insert `value` in `db` with a key that represents the given latitude (`lat`) and longitude (`lng`) in `keyObj`. `keyObj` can have a `customId` than that makes the key unique. By default the customId is a timestamp.
+insert `value` in `db` with a key that represents the given latitude (`lat`) and longitude (`lng`) in `keyObj`. `keyObj` can have a `customId` than that makes the key unique. By default the customId is a timestamp. If `keyObj` is a *String* it falls back to the default `put` function.
 
 ### db.createNearStream(searchObj)
 retrieves the entries in `db` that are in the `radius` of the `lat`, `lng` pair. returns a read stream with the results. `radius` is measured in **meters**. In the retrieved `data` object there is a `_nearby` field besides `key` and `value`, containing a `lat`, `lng`, `distance` field.

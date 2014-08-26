@@ -15,6 +15,10 @@ function height2radius (height) {
 }
 
 function put (db, key, value, os, cb) {
+  if (typeof key == 'string') {
+    db._nearby.put.call(db, key, value, os, cb);
+    return;
+  }
   if (typeof key != 'object') throw new Error('Key is not an Object!');
 
   key = xtend({
