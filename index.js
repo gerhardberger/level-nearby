@@ -16,7 +16,7 @@ function height2radius (height) {
 
 function put (db, key, value, os, cb) {
   if (typeof key == 'string') {
-    db._nearby.put.call(db, key, value, os, cb);
+    db._nearby.put.call(db, key, value, os, cb.bind(null, null, key));
     return;
   }
   if (typeof key != 'object') throw new Error('Key is not an Object!');
@@ -39,7 +39,7 @@ function put (db, key, value, os, cb) {
   var id = new s2.S2CellId(ll.normalized());
   var newKey = '' + id.toString() + '!' + key.customKey;
 
-  db._nearby.put.call(db, newKey, JSON.stringify(value), os, cb);
+  db._nearby.put.call(db, newKey, JSON.stringify(value), os, cb.bind(null, null, newKey));
 }
 
 function createNearStream (db, os) {
